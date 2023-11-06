@@ -23,10 +23,10 @@ $data = mysqli_fetch_array($result);
         <div class="container-fluid">
             <h1>CV Data</h1>
             <ul class="d-flex justify-content-center nav-menu"> <!-- Add the 'nav-menu' class for custom styling -->
-                <li class="nav-item"><a class="nav-link" href="#">Windows</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Android</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Discord</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Youtube</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Menu</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Data</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">CV</a></li>
             </ul>
             <a class="navbar-brand" href="admin.php">Update</a>
         </div>
@@ -44,7 +44,7 @@ $data = mysqli_fetch_array($result);
         <p class="card-text"><?php echo $data['Web']; ?></p>
         <h2>Pendidikan</h2>
         <p class="card-text"><?php echo $data['Pendidikan']; ?></p>
-        <h2>Pengalaman Kerja</h2>
+        <h2>Pengalaman_Kerja</h2>
         <p class="card-text"><?php echo $data['Pengalaman_Kerja']; ?></p>
         <h2>Keterampilan</h2>
         <p class="card-text"><?php echo $data['Keterampilan']; ?></p>
