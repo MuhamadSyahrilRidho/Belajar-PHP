@@ -1,7 +1,7 @@
 <?php
 $host = 'localhost';
-$db = 'if22';
-$user = 'if22';
+$db = 'cv_data';
+$user = 'CV_Data';
 $pwd = '12345';
 
 $conn = mysqli_connect($host, $user, $pwd, $db); // true | false
