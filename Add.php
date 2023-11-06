@@ -1,6 +1,6 @@
 <?php
 //gunakan file config.php
-include_once("config.php");
+include_once("Config.php");
 
 //ambil data dan simpan kedalam variabel result
 $result = mysqli_query($conn, "SELECT * FROM CV_Data");
