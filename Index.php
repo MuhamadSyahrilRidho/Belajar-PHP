@@ -1,41 +1,32 @@
 <?php
-//gunakan file config.php
-include_once("Config.php");
+include 'Config.php';
 
-//ambil data dan simpan kedalam variabel result
-$result = mysqli_query($conn, "SELECT * FROM cv_data WHERE Id = 1");
+$result = mysqli_query($conn, "SELECT * FROM cv_data WHERE id=1");
 $data = mysqli_fetch_array($result);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="main.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoI6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-    </script>
-    <title>CV_Data Mahasiswa</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="main.css">
+  <script src="script.js"></script>
+  <title>Curriculum Vitae</title>
 </head>
-<body>
-    <!-- Navbar -->
-    <nav class="navbar sticky-top bg-body-tertiary biru">
-        <div class="container-fluid">
-            <h1>CV Data</h1>
-            <ul class="d-flex justify-content-center nav-menu"> <!-- Add the 'nav-menu' class for custom styling -->
-                <li class="nav-item"><a class="nav-link" href="#">Menu</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Data</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">CV</a></li>
-            </ul>
-            <a class="navbar-brand" href="admin.php">Update</a>
-        </div>
-    </nav>
-    <!-- Navbar -->
-    <!-- Dalamnya -->
-    <div class="card">
+
+<body class="p-3">
+  <nav class="navbar sticky-top bg-body-tertiary biru">
+    <div class="container-fluid">
+      <h1>Curriculum Vitae</h1>
+      <a class="navbar-brand" href="admin.php">Update</a>
+    </div>
+  </nav>
+  <div class="card">
     <div class="p-3">
-      <img src="<?php echo $data['Foto_Path']; ?>" alt="Foto Profil">
+      <img src="<?php echo $data['Poto_Path']; ?>" alt="Foto_Profil">
       <div class="card-body">
         <h1 class="card-title"><?php echo $data['Nama']; ?></h1>
         <p class="card-text"><?php echo $data['Alamat']; ?></p>
@@ -44,13 +35,12 @@ $data = mysqli_fetch_array($result);
         <p class="card-text"><?php echo $data['Web']; ?></p>
         <h2>Pendidikan</h2>
         <p class="card-text"><?php echo $data['Pendidikan']; ?></p>
-        <h2>Pengalaman_Kerja</h2>
+        <h2>Pengalaman Kerja</h2>
         <p class="card-text"><?php echo $data['Pengalaman_Kerja']; ?></p>
         <h2>Keterampilan</h2>
         <p class="card-text"><?php echo $data['Keterampilan']; ?></p>
       </div>
     </div>
   </div>
-    <!-- Dalamnya -->
 </body>
 </html>
