@@ -76,7 +76,7 @@ if (isset($data['Poto_Path'])) {
     <nav class="navbar sticky-top bg-body-tertiary biru">
       <div class="container-fluid">
         <h1>Update CV</h1>
-        <a class="navbar-brand" href="/cv">View</a>
+        <a class="navbar-brand" href="Index.php">View</a>
       </div>
     </nav>
     <div class="card">
