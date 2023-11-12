@@ -16,6 +16,7 @@ $data = mysqli_fetch_array($result);
   <script src="script.js"></script>
   <title>Curriculum Vitae</title>
 </head>
+
 <body class="p-3">
   <!-- NavBar -->
   <nav class="navbar sticky-top bg-body-tertiary biru">
@@ -33,6 +34,7 @@ $data = mysqli_fetch_array($result);
   <!-- Gambar -->
 
   <!-- Table -->
+  <div>
   <table  border= "2" cellspacing="2" cellpadding="5" align= "center";  width="800">
     <tr align="center" bgcolor= "#1fe5d5">
       <td width="200">Data Diri</td>
@@ -71,6 +73,7 @@ $data = mysqli_fetch_array($result);
       <td class="card-text"><?php echo $data['Keterampilan']; ?></td>
     </tr>
   </table>
+  </div>
   <!-- Table -->
 
 </body>
