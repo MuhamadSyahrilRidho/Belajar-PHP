@@ -16,24 +16,31 @@ $data = mysqli_fetch_array($result);
   <script src="script.js"></script>
   <title>Curriculum Vitae</title>
 </head>
-
 <body class="p-3">
+  <!-- NavBar -->
   <nav class="navbar sticky-top bg-body-tertiary biru">
     <div class="container-fluid">
       <h1>CV</h1>
       <a class="navbar-brand" href="admin.php">Update</a>
     </div>
   </nav>
+  <!-- Navbar -->
+
+  <!-- Gambar -->
+  <div class="text-center">
+  <img src="<?php echo $data['Poto_Path']; ?>" class="rounded mx-auto d-block img-fluid" alt="Foto_Profil">
+  </div>
+  <!-- Gambar -->
+
+  <!-- Table -->
   <table  border= "2" cellspacing="2" cellpadding="5" align= "center";  width="800">
     <tr align="center" bgcolor= "#1fe5d5">
       <td width="200">Data Diri</td>
       <td width="400">Keterangan</td>
-      <td width="200">Foto</td>
     </tr>
     <tr>
       <td>Nama</td>
       <td class="card-title"><?php echo $data['Nama']; ?></td>
-      <td rowspan="2"><img src="<?php echo $data['Poto_Path']; ?>" alt="Foto_Profil"></td>
     </tr>
     <tr>
       <td>Alamat</td>
@@ -64,5 +71,7 @@ $data = mysqli_fetch_array($result);
       <td class="card-text"><?php echo $data['Keterampilan']; ?></td>
     </tr>
   </table>
+  <!-- Table -->
+
 </body>
 </html>
