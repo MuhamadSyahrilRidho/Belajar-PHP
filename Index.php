@@ -20,27 +20,49 @@ $data = mysqli_fetch_array($result);
 <body class="p-3">
   <nav class="navbar sticky-top bg-body-tertiary biru">
     <div class="container-fluid">
-      <h1>Curriculum Vitae</h1>
+      <h1>CV</h1>
       <a class="navbar-brand" href="admin.php">Update</a>
     </div>
   </nav>
-  <div class="card">
-    <div class="p-3">
-      <img src="<?php echo $data['Poto_Path']; ?>" alt="Foto_Profil">
-      <div class="card-body">
-        <h1 class="card-title"><?php echo $data['Nama']; ?></h1>
-        <p class="card-text"><?php echo $data['Alamat']; ?></p>
-        <p class="card-text"><?php echo $data['Telepon']; ?></p>
-        <p class="card-text"><?php echo $data['Email']; ?></p>
-        <p class="card-text"><?php echo $data['Web']; ?></p>
-        <h2>Pendidikan</h2>
-        <p class="card-text"><?php echo $data['Pendidikan']; ?></p>
-        <h2>Pengalaman Kerja</h2>
-        <p class="card-text"><?php echo $data['Pengalaman_Kerja']; ?></p>
-        <h2>Keterampilan</h2>
-        <p class="card-text"><?php echo $data['Keterampilan']; ?></p>
-      </div>
-    </div>
-  </div>
+  <table  border= "2" cellspacing="2" cellpadding="5" align= "center";  width="800">
+    <tr align="center" bgcolor= "#1fe5d5">
+      <td width="200">Data Diri</td>
+      <td width="400">Keterangan</td>
+      <td width="200">Foto</td>
+    </tr>
+    <tr>
+      <td>Nama</td>
+      <td class="card-title"><?php echo $data['Nama']; ?></td>
+      <td rowspan="2"><img src="<?php echo $data['Poto_Path']; ?>" alt="Foto_Profil"></td>
+    </tr>
+    <tr>
+      <td>Alamat</td>
+      <td class="card-text"><?php echo $data['Alamat']; ?></td>
+    </tr>
+    <tr>
+      <td>Telepon</td>
+      <td class="card-text"><?php echo $data['Telepon']; ?></td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td class="card-text"><?php echo $data['Email']; ?></td>
+    </tr>
+    <tr>
+      <td>Web</td>
+      <td class="card-text"><?php echo $data['Web']; ?></td>
+    </tr>
+    <tr>
+      <td>Pendidikan</td>
+      <td class="card-text"><?php echo $data['Pendidikan']; ?></td>
+    </tr>
+    <tr>
+      <td>Pengalaman Kerja</td>
+      <td class="card-text"><?php echo $data['Pengalaman_Kerja']; ?></td>
+    </tr>
+    <tr>
+      <td>Keterampilan</td>
+      <td class="card-text"><?php echo $data['Keterampilan']; ?></td>
+    </tr>
+  </table>
 </body>
 </html>

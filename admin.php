@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         WHERE id = 1"; // Sesuaikan dengan id CV 
 
   $stmt = mysqli_prepare($conn, $query);
-  mysqli_stmt_bind_param($stmt, "sssssssss", $Nama, $alamat, $telepon, $email, $web, $pendidikan, $pengalaman_kerja, $keterampilan, $foto_path);
+  mysqli_stmt_bind_param($stmt, "sssssssss", $nama, $alamat, $telepon, $email, $web, $pendidikan, $pengalaman_kerja, $keterampilan, $foto_path);
 
   if (mysqli_stmt_execute($stmt)) {
     echo 'Data berhasil diperbarui';
@@ -61,18 +61,13 @@ $data = getCVData();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="main.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <title>Update CV</title>
 </head>
 
 <body class="p-3">
   <!-- <div class="container mt-5"> -->
-  <?php
-if (isset($data['Poto_Path'])) {
-    echo $data['Poto_Path'];
-} else {
-    echo "Nilai 'Poto_Path' belum didefinisikan atau tidak ada.";
-}
-?>
     <nav class="navbar sticky-top bg-body-tertiary biru">
       <div class="container-fluid">
         <h1>Update CV</h1>
@@ -101,7 +96,7 @@ if (isset($data['Poto_Path'])) {
               <label for="Keterampilan" class="form-label">Keterampilan</label>
               <textarea class="form-control" id="Keterampilan" name="Keterampilan" rows="3" placeholder="Keterampilan" required><?php echo $data['Keterampilan']; ?></textarea>
               <label for="formFile" class="form-label">Foto Path</label>
-              <input class="form-control" type="text" id="formFile" name="poto_path" value="<?php echo $data['Poto_Path']; ?>" required>
+              <input class="form-control" type="text" id="formFile" name="Poto_Path" value="<?php echo $data['Poto_Path']; ?>" required>
             </div>
             <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
           </form>
